@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from './Button';
+import { Button } from '../button/Button';
+import TasksList from './TasksList';
 
 export type TaskType = {
   id: number,
@@ -9,7 +10,7 @@ export type TaskType = {
 
 type TodoListPropsType = {
   title: string,
-  tasks?: TaskType[],
+  tasks: TaskType[],
 }
 
 export function TodoList(props: TodoListPropsType) {
@@ -20,11 +21,7 @@ export function TodoList(props: TodoListPropsType) {
         <input />
         <Button name='+' />
       </div>
-      <ul>
-        {props.tasks?.map(item => (
-          <li key={item.id} ><input type="checkbox" checked={item.isDone} /> <span>{item.title}</span></li>
-        ))}
-      </ul>
+      <TasksList tasks={props.tasks} />
       <div>
         <Button name='All' />
         <Button name='Active' />
