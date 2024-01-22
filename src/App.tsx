@@ -30,6 +30,10 @@ function App() {
     setTask([newTask, ...task]);
   }
 
+  const changeTaskStatus = (id: string, value: boolean) => {
+    setTask( task.map(item => item.id === id ? {...item, isDone: value} : item) );
+  }
+
   const taskToShow: Array<TaskType> = filter === 'active'
     ? task.filter(item => !item.isDone)
     : filter === 'completed'
@@ -38,7 +42,14 @@ function App() {
 
   return (
     <div className="App">
-      <TodoList title='What to learn' tasks={taskToShow} remove={removeTask} setFilter={setFilter} addTask={addTask}/>
+      <TodoList title='What to learn'
+        tasks={taskToShow}
+        remove={removeTask}
+        setFilter={setFilter}
+        addTask={addTask}
+        changeTaskStatus={changeTaskStatus}
+        filter={filter}
+      />
      {/*  <TodoList title='What to learn' tasks={[]} remove={() => {}} setFilter={() => {}} addTask={() => {}} /> */}
     </div>
   );

@@ -13,3 +13,34 @@
   border-radius: 5px;
   background-color: bisque;
 }
+
+.task {
+  font-weight: bold;
+}
+
+.task-done {
+  color: green;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.btn-active {
+  border-radius: 5px;
+  border: 2px solid aqua;
+  background-color: aqua;
+}
+
+.btn {
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-block {
+  display: flex;
+  gap: 6px
+}
+
+.task-input-error {
+  border: 2px solid red;
+  outline: none;
+}

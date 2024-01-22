@@ -3,11 +3,17 @@ import React from "react"
 type ButtonPropsType = {
   name: string,
   onClick: () => void,
-  isDisabled?: boolean
+  isDisabled?: boolean,
+  classes?: string
 }
 
 export function Button(props: ButtonPropsType) {
   return (
-    <button onClick={props.onClick} disabled={props.isDisabled}>{props.name}</button>
+    <button className={props.classes}
+      onClick={props.onClick}
+      disabled={props.isDisabled}
+    >
+      {props.name}
+    </button>
   )
 }
