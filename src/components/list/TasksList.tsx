@@ -1,6 +1,9 @@
 import { memo } from "react";
 import { TaskType } from "./TodoList";
 import EditableSpan from "../edatableSpan/editableSpan";
+import IconButton from "@mui/material/IconButton";
+import CheckBox from "@mui/material/Checkbox";
+import { Delete } from "@mui/icons-material";
 
 type TasksListPropsType = {
   tasks: Array<TaskType>;
@@ -10,7 +13,6 @@ type TasksListPropsType = {
 };
 
 function TasksList(props: TasksListPropsType) {
-
   const callbacks = {
     changeTaskTitle: (taskId: string, newTitle: string) =>
       props.changeTaskTitle(taskId, newTitle),
@@ -20,20 +22,25 @@ function TasksList(props: TasksListPropsType) {
 
   return (
     <ul>
-      {props.tasks.length > 0 ? (
+      {props.tasks?.length > 0 ? (
         props.tasks.map((item) => (
           <li key={item.id} className={item.isDone ? "task-done" : "task"}>
-            <input
-              type="checkbox"
+            <CheckBox
               checked={item.isDone}
-              onChange={(e) => callbacks.changeTaskStatus(item.id, e.currentTarget.checked) }
+              onChange={(e) =>
+                callbacks.changeTaskStatus(item.id, e.currentTarget.checked)
+              }
             />
             <EditableSpan
               title={item.title}
-              onEdit={(value: string) => callbacks.changeTaskTitle(item.id, value) }
+              onEdit={(value: string) =>
+                callbacks.changeTaskTitle(item.id, value)
+              }
             />
             &nbsp;
-            <button onClick={() => props.remove(item.id)}>X</button>
+            <IconButton onClick={() => props.remove(item.id)}>
+              <Delete />
+            </IconButton>
           </li>
         ))
       ) : (

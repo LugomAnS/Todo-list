@@ -1,9 +1,11 @@
 import {  useState } from "react";
-import { Button } from "../button/Button";
 import TasksList from "./TasksList";
 import { FilterType } from "../../App";
 import AddItemForm from "../addItemForm/AddItemForm";
 import EditableSpan from "../edatableSpan/editableSpan";
+import IconButton from "@mui/material/IconButton";
+import { Delete, HideImage } from "@mui/icons-material";
+import Button from "@mui/material/Button";
 
 export type TaskType = {
   id: string;
@@ -44,8 +46,12 @@ export function TodoList(props: TodoListPropsType) {
     <div className="todo-list">
       <h3>
         <EditableSpan title={props.title} onEdit={callbacks.changeToDoListTitle}/> &nbsp;
-        <Button name="+" onClick={callbacks.onHideChange} />
-        <Button name="X" onClick={callbacks.deleteList}/>
+        <IconButton onClick={callbacks.onHideChange}>
+          <HideImage/>
+        </IconButton>
+        <IconButton onClick={callbacks.deleteList}>
+          <Delete />
+        </IconButton>
       </h3>
       {!hide && (
         <>
@@ -58,20 +64,23 @@ export function TodoList(props: TodoListPropsType) {
           />
           <div className="btn-block">
             <Button
-              classes={props.filter === "all" ? "btn-active" : "btn"}
-              name="All"
+              variant={props.filter === "all" ? "contained" : "outlined"}
               onClick={callbacks.onFilterChange("all")}
-            />
+            >
+              All
+            </Button>
             <Button
-              classes={props.filter === "active" ? "btn-active" : "btn"}
-              name="Active"
+              variant={props.filter === "active" ? "contained" : "outlined"}
               onClick={callbacks.onFilterChange("active")}
-            />
+            >
+              Active
+            </Button>
             <Button
-              classes={props.filter === "completed" ? "btn-active" : "btn"}
-              name="Completed"
+              variant={props.filter === "completed" ? "contained" : "outlined"}
               onClick={callbacks.onFilterChange("completed")}
-            />
+            >
+              Completed
+            </Button>
           </div>
         </>
       )}
