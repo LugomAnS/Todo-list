@@ -4,5 +4,5 @@ type ActionsType = typeof listActions;
 export type ListActionsKeys = keyof ActionsType;
 
 export type ListReducerType = {
-  [key in ListActionsKeys]: ReturnType<typeof listActions[key]>
+  [key in ListActionsKeys]: ReturnType<ActionsType[key]>
 }
