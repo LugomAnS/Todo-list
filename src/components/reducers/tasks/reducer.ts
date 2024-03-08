@@ -4,8 +4,10 @@ import { TaskStateType } from "../../../App";
 import { TaskReducerType, TasksActionsKeys } from "./types";
 import { ListReducerType } from "../todoLists/types";
 
+let initialState: TaskStateType = {};
+
 export function taskReducer<key extends TasksActionsKeys>(
-  state: TaskStateType,
+  state: TaskStateType = initialState,
   action: TaskReducerType[key] | ListReducerType['deleteListAC']
 ): TaskStateType {
   switch (action.type) {

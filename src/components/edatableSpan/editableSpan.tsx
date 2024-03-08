@@ -49,7 +49,7 @@ function EditableSpan(props: EditableSpanPropsType) {
       {error && <div>{error}</div>}
     </>
   ) : (
-    <span onDoubleClick={callbacks.onEditChange}>{props.title}</span>
+       <span onDoubleClick={callbacks.onEditChange}>{props.title}</span>
   );
 }
 

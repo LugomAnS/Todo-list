@@ -1,8 +1,10 @@
 import { TodoListType } from "../../../App";
 import { ListActionsKeys, ListReducerType } from "./types";
 
+let initialState: TodoListType[] = []
+
 export function listReducer<key extends ListActionsKeys>(
-  state: TodoListType[],
+  state: TodoListType[] = initialState,
   action: ListReducerType[key]
 ): TodoListType[] {
   switch (action.type) {
