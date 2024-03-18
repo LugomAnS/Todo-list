@@ -1,6 +1,6 @@
 import { v1 } from "uuid";
-import { TaskType } from "../../list/TodoList";
-import { TaskStateType } from "../../../App";
+import { TaskType } from "../../components/list/TodoList";
+import { TaskStateType } from "../../App";
 import { TaskReducerType, TasksActionsKeys } from "./types";
 import { ListReducerType } from "../todoLists/types";
 

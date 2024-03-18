@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import TasksList from "./TasksList";
+import TasksList from "../tasksList/TasksList";
 import { FilterType } from "../../App";
 import AddItemForm from "../addItemForm/AddItemForm";
 import EditableSpan from "../edatableSpan/editableSpan";

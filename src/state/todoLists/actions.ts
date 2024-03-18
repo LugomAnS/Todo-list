@@ -1,4 +1,4 @@
-import { FilterType } from "../../../App"
+import { FilterType } from "../../App"
 
 export const addToDoListAC = (id: string, title: string) => {
   return {

@@ -1,5 +1,5 @@
-import { memo } from "react";
-import { TaskType } from "./TodoList";
+import { memo, useCallback } from "react";
+import { TaskType } from "../list/TodoList";
 import EditableSpan from "../edatableSpan/editableSpan";
 import IconButton from "@mui/material/IconButton";
 import CheckBox from "@mui/material/Checkbox";
@@ -12,18 +12,19 @@ type TasksListPropsType = {
   changeTaskTitle: (taskId: string, value: string) => void;
 };
 
-function TasksList(props: TasksListPropsType) {
+function TasksList({tasks, remove, changeTaskStatus, changeTaskTitle}: TasksListPropsType) {
   const callbacks = {
-    changeTaskTitle: (taskId: string, newTitle: string) =>
-      props.changeTaskTitle(taskId, newTitle),
-    changeTaskStatus: (taskid: string, value: boolean) =>
-      props.changeTaskStatus(taskid, value),
+    changeTaskTitle: useCallback((taskId: string, newTitle: string) =>
+      changeTaskTitle(taskId, newTitle), [changeTaskTitle]),
+    changeTaskStatus: useCallback((taskid: string, value: boolean) =>
+      changeTaskStatus(taskid, value), [changeTaskStatus]),
+    removeTask: useCallback((id: string) => remove(id), [remove]),
   };
 
   return (
     <ul>
-      {props.tasks?.length > 0 ? (
-        props.tasks.map((item) => (
+      {tasks?.length > 0 ? (
+        tasks.map((item) => (
           <li key={item.id} className={item.isDone ? "task-done" : "task"}>
             <CheckBox
               checked={item.isDone}
@@ -38,7 +39,7 @@ function TasksList(props: TasksListPropsType) {
               }
             />
             &nbsp;
-            <IconButton onClick={() => props.remove(item.id)}>
+            <IconButton onClick={() => callbacks.removeTask(item.id)}>
               <Delete />
             </IconButton>
           </li>

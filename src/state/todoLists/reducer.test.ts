@@ -1,5 +1,5 @@
 import { v1 } from "uuid";
-import { FilterType, TodoListType } from "../../../App";
+import { FilterType, TodoListType } from "../../App";
 import { listReducer } from "./reducer";
 import * as actions from "./actions";
 

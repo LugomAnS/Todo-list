@@ -7,10 +7,10 @@ import Header from "./components/header/Header";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import { taskReducer } from "./components/reducers/tasks/reducer";
-import * as tasksAC from "./components/reducers/tasks/actions";
-import * as listAC from "./components/reducers/todoLists/actions";
-import { listReducer } from "./components/reducers/todoLists/reducer";
+import { taskReducer } from "./state/tasks/reducer";
+import * as tasksAC from "./state/tasks/actions";
+import * as listAC from "./state/todoLists/actions";
+import { listReducer } from "./state/todoLists/reducer";
 
 export type FilterType = "all" | "active" | "completed";
 

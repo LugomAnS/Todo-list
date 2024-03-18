@@ -6,11 +6,12 @@ import Header from "./components/header/Header";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import * as tasksAC from "./components/reducers/tasks/actions";
-import * as listAC from "./components/reducers/todoLists/actions";
+import * as tasksAC from "./state/tasks/actions";
+import * as listAC from "./state/todoLists/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { AppRootStateType } from "./state/store/store";
 import TodoListWithRedux from "./components/todoListWithRedux/TodoListWithRedux";
+import { useCallback } from "react";
 
 export type FilterType = "all" | "active" | "completed";
 
@@ -32,11 +33,11 @@ function AppWithRedux() {
 
   const dispatch = useDispatch();
 
-  const addToDoList = (title: string) => {
+  const addToDoList = useCallback((title: string) => {
     const id = v1();
     dispatch(listAC.addToDoListAC(id, title));
     dispatch(tasksAC.createEmptyTaskListAC(id));
-  };
+  }, [dispatch]);
 
   return (
     <div className="App">

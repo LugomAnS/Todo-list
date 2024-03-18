@@ -1,4 +1,4 @@
-import { TodoListType } from "../../../App";
+import { TodoListType } from "../../App";
 import { ListActionsKeys, ListReducerType } from "./types";
 
 let initialState: TodoListType[] = []
