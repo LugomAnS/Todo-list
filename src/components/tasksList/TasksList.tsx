@@ -1,53 +1,21 @@
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import { TaskType } from "../list/TodoList";
-import EditableSpan from "../edatableSpan/editableSpan";
-import IconButton from "@mui/material/IconButton";
-import CheckBox from "@mui/material/Checkbox";
-import { Delete } from "@mui/icons-material";
+import TaskItem from "../taskItem/taskItem";
 
 type TasksListPropsType = {
+  listId: string;
   tasks: Array<TaskType>;
-  remove: (value: string) => void;
-  changeTaskStatus: (id: string, value: boolean) => void;
-  changeTaskTitle: (taskId: string, value: string) => void;
 };
 
-function TasksList({tasks, remove, changeTaskStatus, changeTaskTitle}: TasksListPropsType) {
-  const callbacks = {
-    changeTaskTitle: useCallback((taskId: string, newTitle: string) =>
-      changeTaskTitle(taskId, newTitle), [changeTaskTitle]),
-    changeTaskStatus: useCallback((taskid: string, value: boolean) =>
-      changeTaskStatus(taskid, value), [changeTaskStatus]),
-    removeTask: useCallback((id: string) => remove(id), [remove]),
-  };
-
+function TasksList({listId, tasks}: TasksListPropsType) {
   return (
-    <ul>
+    <div style={{marginTop: "10px", marginBottom: "10px"}}>
       {tasks?.length > 0 ? (
-        tasks.map((item) => (
-          <li key={item.id} className={item.isDone ? "task-done" : "task"}>
-            <CheckBox
-              checked={item.isDone}
-              onChange={(e) =>
-                callbacks.changeTaskStatus(item.id, e.currentTarget.checked)
-              }
-            />
-            <EditableSpan
-              title={item.title}
-              onEdit={(value: string) =>
-                callbacks.changeTaskTitle(item.id, value)
-              }
-            />
-            &nbsp;
-            <IconButton onClick={() => callbacks.removeTask(item.id)}>
-              <Delete />
-            </IconButton>
-          </li>
-        ))
+        tasks.map((item) => <TaskItem key={item.id} listId={listId} item={item} />)
       ) : (
-        <div>Нет добавленных задач</div>
+        <div style={{marginTop: "15px", marginBottom: "15px"}}>Нет добавленных задач</div>
       )}
-    </ul>
+    </div>
   );
 }
 

@@ -79,10 +79,8 @@ function TodoListWithRedux(props: TodoListPropsType) {
         <>
           <AddItemForm onClick={callbacks.onAddTask} />
           <TasksList
+            listId={props.id}
             tasks={tasksToShow}
-            remove={callbacks.onTaskRemove}
-            changeTaskStatus={callbacks.onChangeTaskStatus}
-            changeTaskTitle={callbacks.changeTaskTitle}
           />
           <div className="btn-block">
             <MuiMemoButton

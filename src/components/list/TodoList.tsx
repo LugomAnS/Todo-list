@@ -56,12 +56,13 @@ export function TodoList(props: TodoListPropsType) {
       {!hide && (
         <>
           <AddItemForm onClick={callbacks.onAddTask} />
-          <TasksList
+          {/* <TasksList
+            listId={props.id}
             tasks={props.tasks}
             remove={callbacks.onTaskRemove}
             changeTaskStatus={callbacks.onChangeTaskStatus}
             changeTaskTitle={callbacks.changeTaskTitle}
-          />
+          /> */}
           <div className="btn-block">
             <Button
               variant={props.filter === "all" ? "contained" : "outlined"}
