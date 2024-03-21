@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDoList/EditableSpan EditableSpanStory smoke-test 1`] = `
+<span>
+  Some text
+</span>
+`;
+
+exports[`ToDoList/EditableSpan EditableSpanStoryEditMode smoke-test 1`] = `<input value="Editing...">`;

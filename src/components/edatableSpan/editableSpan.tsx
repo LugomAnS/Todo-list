@@ -1,6 +1,6 @@
 import { ChangeEvent, memo, useState, KeyboardEvent } from "react";
 
-type EditableSpanPropsType = {
+export type EditableSpanPropsType = {
   onEdit: (value: string) => void;
   title: string;
 };
@@ -49,7 +49,7 @@ function EditableSpan(props: EditableSpanPropsType) {
       {error && <div>{error}</div>}
     </>
   ) : (
-       <span onDoubleClick={callbacks.onEditChange}>{props.title}</span>
+       <div onDoubleClick={callbacks.onEditChange}>{props.title}</div>
   );
 }
 

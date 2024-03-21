@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDoList/AddItemForm AddItemFormStory smoke-test 1`] = `
+<div>
+  <div class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-1pysi21-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for="outlined-basic"
+           id="outlined-basic-label"
+    >
+      Введите значение
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             id="outlined-basic"
+             placeholder="Введите значение"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Введите значение
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall css-1rzwrt7-MuiButtonBase-root-MuiButton-root"
+          tabindex="-1"
+          type="button"
+          disabled
+  >
+    +
+  </button>
+</div>
+`;
+
+exports[`ToDoList/AddItemForm AddItemFormStoryError smoke-test 1`] = `
+<div>
+  <div class="MuiFormControl-root MuiTextField-root task-input-error css-1u3bzj6-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-error MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-1pysi21-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for="outlined-basic"
+           id="outlined-basic-label"
+    >
+      Некорректное название
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="true"
+             id="outlined-basic"
+             placeholder="Введите значение"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Некорректное название
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall css-1rzwrt7-MuiButtonBase-root-MuiButton-root"
+          tabindex="-1"
+          type="button"
+          disabled
+  >
+    +
+  </button>
+</div>
+`;

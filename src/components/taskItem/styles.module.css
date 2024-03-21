@@ -1,3 +1,16 @@
+.Wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+}
+
+.Descr {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
 .Task {
   font-weight: bold;
 }
